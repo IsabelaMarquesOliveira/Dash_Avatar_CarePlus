@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="pt-br"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: {
+                        "display": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(17, 82, 212, 0.1);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .metric-glow {
+            box-shadow: 0 0 15px rgba(17, 82, 212, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+<header class="flex items-center justify-between border-b border-primary/20 px-6 py-4 bg-background-dark/50 sticky top-0 z-50 backdrop-blur-md">
+<div class="flex items-center gap-4 text-primary">
+<div class="size-8">
+<svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+<path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+</svg>
+</div>
+<h2 class="text-slate-100 text-xl font-bold tracking-tight">CarePlus <span class="text-primary/80 font-normal">Health</span></h2>
+</div>
+<div class="flex items-center gap-4">
+<div class="hidden md:flex gap-6 mr-8">
+<a class="text-primary font-semibold flex items-center gap-2" href="#"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined">description</span> Relatórios</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined">monitor_heart</span> Planos</a>
+</div>
+<button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/20 text-primary">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<a href="dispositivo.html" class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/20 text-primary hover:bg-primary/30 transition-colors">
+<span class="material-symbols-outlined">settings</span>
+</a>
+<div class="bg-primary/30 rounded-full p-1 border border-primary/50">
+<div class="size-8 rounded-full bg-cover bg-center" data-alt="Avatar circular do usuário João" style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuDOSsCFWmGOAgwU7tT1OSklJS49VrZiQLL8vHJcaN9sau-5HIDPeTYnca00oqugMHSZWCLK_bl8m8DOzoqMloaTNT8gxp2H6B8b3yQui_TJMdFLeXmxwU5hLdjXLUzFw77MqiTxGHz8mOLn60S31m7sY9d8GyHUGXaUTTPXoPkzDPkap4JxA4ebH4hJ3FDX6dDpcwKahzLwQN60DHQoChck9YM4q0U8qV1UcltqU__t6Kgo08bCB6kLxk5tB4gae13T0Xs_9g0LH3c');"></div>
+</div>
+</div>
+</header>
+<main class="flex-1 p-6 max-w-7xl mx-auto w-full grid grid-cols-1 lg:grid-cols-12 gap-6">
+<div class="lg:col-span-3 space-y-6">
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-emerald-400">spa</span> Wellness
+                    </h3>
+<div class="space-y-3">
+<div class="bg-slate-800/40 p-4 rounded-xl border border-slate-700/50 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div>
+<p class="text-slate-400 text-xs uppercase font-bold">Sono</p>
+<p class="text-xl font-bold text-slate-100">7h 45m</p>
+</div>
+<span class="material-symbols-outlined text-indigo-400 text-3xl">bedtime</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+<div class="bg-slate-800/40 p-4 rounded-xl border border-slate-700/50 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div>
+<p class="text-slate-400 text-xs uppercase font-bold">Hidratação</p>
+<p class="text-xl font-bold text-slate-100">1.8L <span class="text-sm font-normal text-slate-400">/ 2.5L</span></p>
+</div>
+<span class="material-symbols-outlined text-cyan-400 text-3xl">water_drop</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+<div class="bg-slate-800/40 p-4 rounded-xl border border-slate-700/50 flex items-center justify-between cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div>
+<p class="text-slate-400 text-xs uppercase font-bold">Passos</p>
+<p class="text-xl font-bold text-slate-100">8.432</p>
+</div>
+<span class="material-symbols-outlined text-orange-400 text-3xl">steps</span>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+</div>
+</section>
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-amber-400">biotech</span> Lab Results
+                    </h3>
+<div class="bg-slate-800/40 p-4 rounded-xl border border-slate-700/50 space-y-4 cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div class="flex justify-between items-end">
+<div>
+<p class="text-slate-400 text-xs font-bold">Colesterol</p>
+<p class="text-lg font-bold text-slate-100">185 <span class="text-xs font-normal">mg/dL</span></p>
+</div>
+<span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Normal</span>
+</div>
+<div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-emerald-500 h-full w-[65%]"></div>
+</div>
+<div class="flex justify-between items-end">
+<div>
+<p class="text-slate-400 text-xs font-bold">Vitamina D</p>
+<p class="text-lg font-bold text-slate-100">32 <span class="text-xs font-normal">ng/mL</span></p>
+</div>
+<span class="px-2 py-1 rounded bg-amber-500/20 text-amber-400 text-[10px] font-bold uppercase tracking-wider">Atenção</span>
+</div>
+<div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+<div class="bg-amber-500 h-full w-[40%]"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+</section>
+</div>
+<div class="lg:col-span-6 flex flex-col items-center justify-center relative min-h-[500px]">
+<div class="absolute inset-0 flex items-center justify-center">
+<div class="w-[450px] h-[450px] rounded-full border border-primary/20 border-dashed animate-[spin_20s_linear_infinite]"></div>
+</div>
+<div class="relative z-10 text-center flex flex-col items-center">
+<div class="mb-2">
+<div class="bg-primary/20 backdrop-blur-xl px-6 py-2 rounded-full border border-primary/40 inline-flex items-center gap-3">
+<span class="material-symbols-outlined text-primary">auto_awesome</span>
+<span class="text-primary font-bold">AI Health Score: <span class="text-2xl ml-1">88</span></span>
+</div>
+</div>
+<div class="relative group cursor-pointer transition-transform duration-500 hover:scale-105">
+<div class="absolute -inset-4 bg-primary/20 blur-3xl rounded-full opacity-50"></div>
+<img id="main-avatar" alt="Avatar do usuário em estilo cartoon 3D" class="w-64 h-64 lg:w-80 lg:h-80 drop-shadow-2xl relative z-10 transition-all duration-300" data-alt="Personagem de desenho animado amigável representando o usuário" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBmmWw3oHXDWzNcX_slRV008HBnlM3OPPFkFxRGHeHpOOB2OslCjIXKPIheAmXeZGenhsmCS9pE2W-sx-gJczmZNtamZurdRoYqQXmfZ7ssFAF2gEgj3ymSc2zIfrgDzzFir1LkN_C6L-_waa7vIgTJUEU7EmrycEnFqulWUW7Epx_GnpTwiBWHGGutIdCRBwTIWJn0NLqrOQXAVbAofFNnHe_OaBVPAtXqXcNZixF9qxUwKmw4O6kzjUdInSS2ZDneV2rcmqUxfZU"/>
+<div class="absolute -top-4 -right-4 bg-emerald-500 text-white p-3 rounded-2xl shadow-xl metric-glow flex items-center gap-2 z-20">
+<span class="material-symbols-outlined text-lg">bolt</span>
+<span class="font-bold">Em Alta!</span>
+</div><button class="absolute -bottom-2 -right-2 bg-primary text-white p-2 rounded-full shadow-xl metric-glow flex items-center gap-2 z-20 hover:scale-110 transition-transform" id="open-customization"><span class="material-symbols-outlined text-lg">edit</span><span class="text-xs font-bold">Personalizar</span></button>
+</div>
+<div class="mt-8 space-y-1">
+<h1 class="text-3xl font-black text-slate-100">Olá, João Silva!</h1>
+<p class="text-slate-400 text-lg">Sua saúde está excelente hoje.</p>
+</div>
+<div class="mt-10 w-full max-w-sm">
+<div class="bg-slate-800/60 backdrop-blur-md p-4 rounded-2xl border border-slate-700/50">
+<div class="flex items-center justify-between mb-3">
+<span class="text-sm font-bold flex items-center gap-2"><span class="material-symbols-outlined text-primary">medication</span> Próxima Medicação</span>
+<span class="text-xs text-slate-400">Em 45 min</span>
+</div>
+<div class="flex items-center gap-4 bg-background-dark/50 p-3 rounded-xl border border-primary/20">
+<div class="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">pill</span>
+</div>
+<div class="text-left">
+<p class="text-sm font-bold text-slate-100">Multivitamínico A-Z</p>
+<p class="text-xs text-slate-400">1 Cápsula • Café da manhã</p>
+<a href="medicamentos.html" target="_blank" class="ml-auto bg-primary text-white text-xs px-3 py-1.5 rounded-lg font-bold flex items-center justify-center">
+    Gerenciar
+</a>
+</div>
+<button class="ml-auto bg-primary text-white text-xs px-3 py-1.5 rounded-lg font-bold">Tomar</button>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="lg:col-span-3 space-y-6">
+<section>
+<h3 class="text-lg font-bold mb-4 flex items-center gap-2">
+<span class="material-symbols-outlined text-rose-400">monitoring</span> Vitals Monitor
+                    </h3>
+<div class="grid grid-cols-1 gap-4">
+<div class="bg-rose-500/10 p-5 rounded-2xl border border-rose-500/20 relative overflow-hidden group cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div class="flex justify-between items-start relative z-10">
+<div>
+<p class="text-rose-400 text-xs font-bold uppercase tracking-wider">Batimentos</p>
+<p class="text-3xl font-black text-slate-100">72 <span class="text-sm font-medium opacity-60">BPM</span></p>
+</div>
+<span class="material-symbols-outlined text-rose-500 text-4xl">favorite</span>
+</div>
+<div class="mt-4 flex gap-1 h-8 items-end relative z-10">
+<div class="w-full bg-rose-500/30 h-4 rounded-sm"></div>
+<div class="w-full bg-rose-500/50 h-6 rounded-sm"></div>
+<div class="w-full bg-rose-500/40 h-5 rounded-sm"></div>
+<div class="w-full bg-rose-500/60 h-8 rounded-sm"></div>
+<div class="w-full bg-rose-500/50 h-6 rounded-sm"></div>
+<div class="w-full bg-rose-500/40 h-5 rounded-sm"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+<div class="bg-blue-500/10 p-5 rounded-2xl border border-blue-500/20 cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-blue-400 text-xs font-bold uppercase tracking-wider">Pressão Art.</p>
+<p class="text-3xl font-black text-slate-100">12/8 <span class="text-sm font-medium opacity-60">mmHg</span></p>
+</div>
+<span class="material-symbols-outlined text-blue-500 text-4xl">blood_pressure</span>
+</div>
+<p class="mt-2 text-xs text-blue-400/80 font-medium">Estável nas últimas 24h</p>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+<div class="bg-cyan-500/10 p-5 rounded-2xl border border-cyan-500/20 cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-cyan-400 text-xs font-bold uppercase tracking-wider">Oxigênio (SpO2)</p>
+<p class="text-3xl font-black text-slate-100">98 <span class="text-sm font-medium opacity-60">%</span></p>
+</div>
+<span class="material-symbols-outlined text-cyan-500 text-4xl">air</span>
+</div>
+<div class="mt-3 w-full bg-cyan-900/40 h-2 rounded-full">
+<div class="bg-cyan-400 h-full w-[98%] rounded-full"></div>
+</div>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+<div class="bg-purple-500/10 p-5 rounded-2xl border border-purple-500/20 cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
+<div class="flex justify-between items-start">
+<div>
+<p class="text-purple-400 text-xs font-bold uppercase tracking-wider">Glicose</p>
+<p class="text-3xl font-black text-slate-100">92 <span class="text-sm font-medium opacity-60">mg/dL</span></p>
+</div>
+<span class="material-symbols-outlined text-purple-500 text-4xl">opacity</span>
+</div>
+<p class="mt-2 text-xs text-purple-400/80 font-medium">Pós-jejum • Ideal</p>
+<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+</div>
+</section>
+</div>
+</main>
+<footer class="p-6 bg-slate-900/80 border-t border-slate-800 backdrop-blur-sm mt-auto">
+<div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<div class="bg-primary/20 p-2 rounded-lg">
+<span class="material-symbols-outlined text-primary">event_note</span>
+</div>
+<div>
+<p class="text-slate-100 font-bold text-sm">Próximo Check-up</p>
+<p class="text-slate-400 text-xs">Dr. Marcos (Cardiologista) • 15 de Outubro</p>
+</div>
+</div>
+<div class="flex gap-3">
+<a href="consultas.html" class="bg-primary hover:bg-primary/80 text-white font-bold py-3 px-8 rounded-xl transition-all shadow-lg shadow-primary/20 flex items-center gap-2">
+    <span class="material-symbols-outlined">add_circle</span> Agendar Consulta
+</a>
+<a href="contatos.html" class="bg-slate-800 hover:bg-slate-700 text-white font-bold py-3 px-6 rounded-xl transition-all border border-slate-700 flex items-center gap-2">
+<span class="material-symbols-outlined">support_agent</span> Telemedicina
+</a>
+</div>
+</div>
+</footer>
+</div>
+<div class="fixed top-0 right-0 h-full w-80 bg-slate-900/95 backdrop-blur-xl border-l border-slate-700 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl" id="customization-panel"><div class="p-6 h-full flex flex-col"><div class="flex justify-between items-center mb-8"><h3 class="text-xl font-bold text-white">Personalizar Avatar</h3><button class="text-slate-400 hover:text-white" id="close-customization"><span class="material-symbols-outlined">close</span></button></div><div class="space-y-6 flex-1 overflow-y-auto pr-2"><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Cabelo</p><div class="grid grid-cols-3 gap-2"><div class="aspect-square bg-slate-800 rounded-lg border-2 border-primary cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">face</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Curto Moderno</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">face_5</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Longo Ondulado</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">face_6</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Militar</span></div></div></div><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Roupas</p><div class="grid grid-cols-3 gap-2"><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">medical_services</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Scrub Azul</span></div><div class="aspect-square bg-slate-800 rounded-lg border-2 border-primary cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">apparel</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Moletom Casual</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">checkroom</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Camisa Social</span></div></div></div><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Cores da Roupa</p><div class="flex flex-wrap gap-3"><div class="size-8 rounded-full bg-blue-500 border-2 border-primary cursor-pointer ring-offset-2 ring-offset-slate-900 ring-2 ring-primary transition-all hover:scale-110 shadow-lg shadow-blue-500/20" title="Azul"></div><div class="size-8 rounded-full bg-red-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-red-500/20" title="Vermelho"></div><div class="size-8 rounded-full bg-emerald-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-emerald-500/20" title="Verde"></div><div class="size-8 rounded-full bg-amber-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-amber-500/20" title="Amarelo"></div><div class="size-8 rounded-full bg-purple-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-purple-500/20" title="Roxo"></div><div class="size-8 rounded-full bg-orange-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-orange-500/20" title="Laranja"></div></div></div><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Acessórios</p><div class="grid grid-cols-3 gap-2"><div class="aspect-square bg-slate-800 rounded-lg border-2 border-primary cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">eyeglasses</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Óculos</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">stethoscope</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Estetoscópio</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">watch</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Relógio Digital</span></div></div></div></div><button id="save-customization" class="mt-6 w-full bg-primary hover:bg-primary/80 text-white font-bold py-3 rounded-xl transition-all">Salvar Alterações e Cores</button></div></div>
+
+<script>
+    // Seletores Principais
+    const openBtn = document.getElementById('open-customization'); 
+    const closeBtn = document.getElementById('close-customization'); 
+    const panel = document.getElementById('customization-panel');
+    const avatar = document.getElementById('main-avatar');
+    const saveBtn = document.getElementById('save-customization');
+
+    // Funções de Abrir/Fechar Painel
+    openBtn.addEventListener('click', () => panel.classList.remove('translate-x-full')); 
+    closeBtn.addEventListener('click', () => panel.classList.add('translate-x-full'));
+
+    // Lógica para mudar a cor do avatar via filtros CSS (Hue-Rotate)
+    document.querySelectorAll('[title]').forEach(colorBtn => {
+        colorBtn.addEventListener('click', () => {
+            const color = colorBtn.getAttribute('title');
+            
+            // Remove destaque de todos e adiciona no clicado
+            document.querySelectorAll('[title]').forEach(b => b.classList.replace('ring-primary', 'border-slate-700'));
+            colorBtn.classList.add('ring-2', 'ring-primary');
+
+            // Aplica o filtro de cor na imagem
+            if(color === 'Azul') avatar.style.filter = "hue-rotate(0deg)";
+            if(color === 'Vermelho') avatar.style.filter = "hue-rotate(140deg)";
+            if(color === 'Verde') avatar.style.filter = "hue-rotate(80deg)";
+            if(color === 'Amarelo') avatar.style.filter = "hue-rotate(40deg)";
+            if(color === 'Roxo') avatar.style.filter = "hue-rotate(240deg)";
+            if(color === 'Laranja') avatar.style.filter = "hue-rotate(15deg)";
+        });
+    });
+
+    // Lógica para troca de Estilos (Cabelo/Roupas/Acessórios)
+    // Como não temos as URLs das imagens separadas, adicionei um efeito visual de troca
+    document.querySelectorAll('.aspect-square').forEach(styleBtn => {
+        styleBtn.addEventListener('click', () => {
+            // Remove borda azul de todos do mesmo grupo e coloca no selecionado
+            const parent = styleBtn.parentElement;
+            parent.querySelectorAll('.aspect-square').forEach(b => b.classList.replace('border-primary', 'border-slate-700'));
+            styleBtn.classList.add('border-2', 'border-primary');
+
+            // Feedback visual no avatar (piscar) para indicar a troca
+            avatar.style.opacity = "0.5";
+            setTimeout(() => {
+                avatar.style.opacity = "1";
+            }, 150);
+        });
+    });
+
+    // Botão Salvar
+    saveBtn.addEventListener('click', () => {
+        panel.classList.add('translate-x-full');
+        alert("Avatar personalizado com sucesso!");
+    });
+</script>
+</body></html>

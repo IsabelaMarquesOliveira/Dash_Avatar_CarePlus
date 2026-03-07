@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-BR">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap" rel="stylesheet"/>
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: { "display": ["Inter", "sans-serif"] },
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .doctor-selected { border-color: #1152d4 !important; background-color: rgba(17, 82, 212, 0.1) !important; }
+        .day-selected { background-color: #1152d4 !important; color: white !important; font-weight: bold; box-shadow: 0 4px 6px -1px rgba(17, 82, 212, 0.3); }
+    </style>
+</head>
+<body class="bg-background-light dark:bg-background-dark text-slate-900 dark:text-slate-100 min-h-screen">
+    <div class="relative flex flex-col min-h-screen w-full overflow-x-hidden">
+        
+        <header class="flex items-center justify-between border-b border-slate-200 dark:border-slate-800 px-6 py-4 lg:px-40 bg-background-light dark:bg-background-dark sticky top-0 z-50">
+            <div class="flex items-center gap-4">
+                <a href="index.html" class="p-2 hover:bg-slate-200 dark:hover:bg-slate-800 rounded-lg transition-colors flex items-center justify-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg>
+                </a>
+                <div class="flex flex-col">
+                    <h2 class="text-xl font-bold leading-tight tracking-tight">CarePlus</h2>
+                    <span class="text-[10px] uppercase tracking-widest text-primary font-bold">Gêmeo Digital</span>
+                </div>
+            </div>
+            <div class="flex flex-1 justify-end gap-6 items-center">
+                <nav class="hidden md:flex items-center gap-8">
+                    <a class="text-slate-600 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="index.html">Início</a>
+                    <a class="text-primary text-sm font-bold border-b-2 border-primary pb-1" href="#">Consultas</a>
+                    <a class="text-slate-600 dark:text-slate-300 hover:text-primary text-sm font-medium transition-colors" href="#">Histórico</a>
+                </nav>
+                <div class="size-10 rounded-full border-2 border-primary/20 bg-cover" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD-wS0dOpuo8nMh6s56jOuHX-jfRHIVseUqnmK_f-OH5vs-ZMKebTwjk3tfnLkokXTPcsVbcEE4Ga-DHUYV-psNs8LhyKWOl7hqWwHXHK_9qpWHqmCUptzZusRiaDZ2xohLjXg7O3ZxRXvJbVPQD57IT4NkotAnqRJD2kFtk6CcY-hoQkksrBQOGzaiD0qOCXkI3Y3qxL5bGMolZ01yWhq9Q8bAKY2eaXKZtqTNDr9nC16BODc0b2yKcjs4g8v1Jx34XZLIETC7Ul0");'></div>
+            </div>
+        </header>
+
+        <main class="flex-1 px-6 py-8 lg:px-40 max-w-[1200px] mx-auto w-full">
+            <div class="mb-8">
+                <h1 class="text-3xl md:text-4xl font-black tracking-tight mb-2 text-slate-900 dark:text-white">Agendar Nova Consulta</h1>
+                <p class="text-slate-500 dark:text-slate-400">Personalize seu atendimento através do seu Gêmeo Digital.</p>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 flex flex-col gap-8">
+                    
+                    <section class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-4 text-slate-900 dark:text-white">
+                            <svg class="text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                            <h3 class="text-lg font-bold">Selecionar Médico</h3>
+                        </div>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <label id="doc1" class="doctor-selected relative flex items-center p-4 rounded-xl border-2 cursor-pointer transition-all">
+                                <input checked class="hidden" name="doctor" type="radio" onclick="updateDoctor('Dr. Ricardo Silva', 'doc1')"/>
+                                <img class="size-12 rounded-lg bg-slate-200 mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBVKVibJ0cL_hH5VXipg7GVzZUXwlR-zTGcYhCCpA1GKx8cYVfgL8sGrSq-tlJtvwMjn32MGEUTv8kra99s0euYIA5IsfD7iU2aa-1-aT9R0o1CazCD6x_vXEBpykflYVu30A2tOMgFWAsRGn6EnEli6A5xzB-6toueQkEmYip_IeU3g1o-nC03QRItjE5hDUmCJPPmov10QpNT3-DI5zkFV8BJC4cNQH8CPW2yu1Q2p6Jo80Bqw4V87mZjnMEfkyYDL2810McuZY0"/>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-slate-900 dark:text-white">Dr. Ricardo Silva</span>
+                                    <span class="text-xs text-slate-500">Cardiologista • 12 anos exp.</span>
+                                </div>
+                            </label>
+                            <label id="doc2" class="relative flex items-center p-4 rounded-xl border-2 border-transparent bg-slate-100 dark:bg-slate-800/50 hover:border-primary/30 cursor-pointer transition-all">
+                                <input class="hidden" name="doctor" type="radio" onclick="updateDoctor('Dra. Julia Mendes', 'doc2')"/>
+                                <img class="size-12 rounded-lg bg-slate-200 mr-4" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVIZE-TZUYsth_YpSGsRkNOy3GjnL6FSsXqLnViksbKlUVtQNcempzOgESXaT7ZHolDRTBY-hZvraUFSmMqTRcgLfPIGZQi69JxObn5A-by30JxOmrneqxuib29FmQUPXSHOrtEg6yA9IKLKvGIM0JmNO_YIXCvRkCVD3VJ8QvIwnuQyrbIPDapYsejBeOrlb12nutNMuGf3PphPKLXFyAhO5347fcVL7jR5kAbvYRBg-rPgp6Cnf6ir8kurpLrVJU6mwFjtTT_l4"/>
+                                <div class="flex flex-col">
+                                    <span class="font-bold text-slate-900 dark:text-white">Dra. Julia Mendes</span>
+                                    <span class="text-xs text-slate-500">Cardiologista • 8 anos exp.</span>
+                                </div>
+                            </label>
+                        </div>
+                    </section>
+
+                    <section class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div>
+                                <div class="flex items-center gap-2 mb-4 text-slate-900 dark:text-white">
+                                    <svg class="text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    <h3 class="text-lg font-bold">Data</h3>
+                                </div>
+                                <div class="bg-slate-50 dark:bg-slate-800/50 p-4 rounded-xl border border-slate-200 dark:border-slate-700">
+                                    <p class="text-center font-bold text-sm mb-4">Maio 2024</p>
+                                    <div class="grid grid-cols-7 gap-1 text-center text-[10px] font-bold text-slate-400 mb-2">
+                                        <div>D</div><div>S</div><div>T</div><div>Q</div><div>Q</div><div>S</div><div>S</div>
+                                    </div>
+                                    <div class="grid grid-cols-7 gap-1" id="calendar-days">
+                                        <div class="p-2 text-slate-300 dark:text-slate-700 text-xs">28</div>
+                                        <div class="p-2 text-slate-300 dark:text-slate-700 text-xs">29</div>
+                                        <div class="p-2 text-slate-300 dark:text-slate-700 text-xs">30</div>
+                                        <button onclick="updateDate('01', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">01</button>
+                                        <button onclick="updateDate('02', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">02</button>
+                                        <button onclick="updateDate('03', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">03</button>
+                                        <button onclick="updateDate('04', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">04</button>
+                                        <button onclick="updateDate('05', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">05</button>
+                                        <button onclick="updateDate('06', this)" class="day-btn day-selected p-2 text-xs rounded transition-all">06</button>
+                                        <button onclick="updateDate('07', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">07</button>
+                                        <button onclick="updateDate('08', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">08</button>
+                                        <button onclick="updateDate('09', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">09</button>
+                                        <button onclick="updateDate('10', this)" class="day-btn p-2 text-xs rounded hover:bg-primary/20 transition-all">10</button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <div class="flex items-center gap-2 mb-4 text-slate-900 dark:text-white">
+                                    <svg class="text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    <h3 class="text-lg font-bold">Horário</h3>
+                                </div>
+                                <div class="grid grid-cols-2 gap-2">
+                                    <button onclick="updateTime('09:00', this)" class="time-btn p-3 rounded-lg border-2 border-primary bg-primary/10 font-bold text-sm">09:00</button>
+                                    <button onclick="updateTime('10:30', this)" class="time-btn p-3 rounded-lg border-2 border-transparent bg-slate-100 dark:bg-slate-800/80 text-sm hover:border-primary/50">10:30</button>
+                                    <button onclick="updateTime('14:00', this)" class="time-btn p-3 rounded-lg border-2 border-transparent bg-slate-100 dark:bg-slate-800/80 text-sm hover:border-primary/50">14:00</button>
+                                    <button onclick="updateTime('16:45', this)" class="time-btn p-3 rounded-lg border-2 border-transparent bg-slate-100 dark:bg-slate-800/80 text-sm hover:border-primary/50">16:45</button>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+
+                    <section class="bg-white dark:bg-slate-900/50 p-6 rounded-xl border border-slate-200 dark:border-slate-800">
+                        <div class="flex items-center gap-2 mb-4 text-slate-900 dark:text-white">
+                            <svg class="text-primary" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 1 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+                            <h3 class="text-lg font-bold">Motivo da Consulta</h3>
+                        </div>
+                        <textarea class="w-full bg-slate-100 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-primary p-4 text-slate-900 dark:text-slate-200" placeholder="Descreva brevemente seus sintomas..." rows="3"></textarea>
+                    </section>
+                </div>
+
+                <div class="lg:col-span-1">
+                    <div class="sticky top-24 flex flex-col gap-6">
+                        <div class="bg-primary rounded-2xl p-6 text-white shadow-xl shadow-primary/30">
+                            <h4 class="text-sm font-bold uppercase tracking-widest opacity-80 mb-4 text-center">Resumo do Agendamento</h4>
+                            <div class="space-y-4">
+                                <div class="flex items-start gap-3">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-70"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+                                    <div><p class="text-xs opacity-70">Médico</p><p class="font-bold" id="resumo-medico">Dr. Ricardo Silva</p></div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-70"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+                                    <div><p class="text-xs opacity-70">Data</p><p class="font-bold" id="resumo-dia">06 de Maio</p></div>
+                                </div>
+                                <div class="flex items-start gap-3">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" class="opacity-70"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                                    <div><p class="text-xs opacity-70">Horário</p><p class="font-bold" id="resumo-hora">09:00</p></div>
+                                </div>
+                            </div>
+                            <hr class="my-6 border-white/20"/>
+                            
+                            <button onclick="finalizarAgendamento()" class="w-full py-4 bg-white text-primary font-black text-center rounded-xl block hover:bg-slate-100 transition-all shadow-lg shadow-white/10 uppercase tracking-tighter cursor-pointer">Confirmar Agendamento</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        // Variáveis globais para armazenar as seleções
+        let diaSelecionado = "06";
+        let horaSelecionada = "09:00";
+
+        function updateDoctor(nome, id) {
+            document.getElementById('resumo-medico').innerText = nome;
+            document.querySelectorAll('label').forEach(label => {
+                label.classList.remove('doctor-selected');
+                label.classList.add('border-transparent', 'bg-slate-100', 'dark:bg-slate-800/50');
+            });
+            const selectedLabel = document.getElementById(id);
+            selectedLabel.classList.add('doctor-selected');
+            selectedLabel.classList.remove('border-transparent', 'bg-slate-100', 'dark:bg-slate-800/50');
+        }
+
+        function updateDate(dia, btn) {
+            diaSelecionado = dia;
+            document.getElementById('resumo-dia').innerText = dia + " de Maio";
+            
+            // Remove destaque dos outros dias
+            document.querySelectorAll('.day-btn').forEach(d => {
+                d.classList.remove('day-selected');
+            });
+            // Adiciona destaque ao dia clicado
+            btn.classList.add('day-selected');
+        }
+
+        function updateTime(hora, btn) {
+            horaSelecionada = hora;
+            document.getElementById('resumo-hora').innerText = hora;
+            
+            document.querySelectorAll('.time-btn').forEach(b => {
+                b.classList.remove('border-primary', 'bg-primary/10', 'font-bold');
+                b.classList.add('border-transparent');
+            });
+            btn.classList.add('border-primary', 'bg-primary/10', 'font-bold');
+            btn.classList.remove('border-transparent');
+        }
+
+        // FUNÇÃO DE SINCRONIZAÇÃO CORRIGIDA (ENVIANDO DATA E HORA)
+        function finalizarAgendamento() {
+            const dataParaEnvio = `2024-05-${diaSelecionado}`;
+            
+            // Redireciona para confirmacao.html passando data e hora como parâmetros
+            window.location.href = `confirmacao.html?data=${dataParaEnvio}&hora=${horaSelecionada}`;
+        }
+    </script>
+</body>
+</html>
