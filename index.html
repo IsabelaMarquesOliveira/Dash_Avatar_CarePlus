@@ -1,6 +1,6 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="pt-br"><head>
+<html class="dark" lang="pt-br">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
@@ -52,7 +52,7 @@
 <div class="hidden md:flex gap-6 mr-8">
 <a class="text-primary font-semibold flex items-center gap-2" href="#"><span class="material-symbols-outlined">dashboard</span> Dashboard</a>
 <a class="text-slate-400 hover:text-slate-100 transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined">description</span> Relatórios</a>
-<a class="text-slate-400 hover:text-slate-100 transition-colors flex items-center gap-2" href="#"><span class="material-symbols-outlined">monitor_heart</span> Planos</a>
+<a class="text-slate-400 hover:text-slate-100 transition-colors flex items-center gap-2" href="planos.html"><span class="material-symbols-outlined">monitor_heart</span> Planos</a>
 </div>
 <button class="flex items-center justify-center rounded-xl h-10 w-10 bg-primary/20 text-primary">
 <span class="material-symbols-outlined">notifications</span>
@@ -95,32 +95,41 @@
 <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
 </div>
 </section>
+
 <section>
 <h3 class="text-lg font-bold mb-4 flex items-center gap-2">
 <span class="material-symbols-outlined text-amber-400">biotech</span> Lab Results
-                    </h3>
-<div class="bg-slate-800/40 p-4 rounded-xl border border-slate-700/50 space-y-4 cursor-pointer hover:bg-slate-800/60 transition-all hover:scale-[1.02] group/card relative">
-<div class="flex justify-between items-end">
-<div>
-<p class="text-slate-400 text-xs font-bold">Colesterol</p>
-<p class="text-lg font-bold text-slate-100">185 <span class="text-xs font-normal">mg/dL</span></p>
-</div>
-<span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Normal</span>
-</div>
-<div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
-<div class="bg-emerald-500 h-full w-[65%]"></div>
-</div>
-<div class="flex justify-between items-end">
-<div>
-<p class="text-slate-400 text-xs font-bold">Vitamina D</p>
-<p class="text-lg font-bold text-slate-100">32 <span class="text-xs font-normal">ng/mL</span></p>
-</div>
-<span class="px-2 py-1 rounded bg-amber-500/20 text-amber-400 text-[10px] font-bold uppercase tracking-wider">Atenção</span>
-</div>
-<div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
-<div class="bg-amber-500 h-full w-[40%]"></div>
-</div>
-<div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/20 rounded-xl"><span class="bg-white/10 backdrop-blur-md px-3 py-1 rounded-full text-[10px] font-bold uppercase">Clique para Detalhes</span></div></div>
+</h3>
+<a href="exames.html" class="block">
+    <div class="bg-slate-800/40 p-4 rounded-xl border border-slate-700/50 space-y-4 cursor-pointer hover:bg-slate-800/60 hover:border-primary/50 transition-all hover:scale-[1.02] group/card relative">
+        <div class="flex justify-between items-end">
+        <div>
+        <p class="text-slate-400 text-xs font-bold">Colesterol</p>
+        <p class="text-lg font-bold text-slate-100">185 <span class="text-xs font-normal">mg/dL</span></p>
+        </div>
+        <span class="px-2 py-1 rounded bg-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-wider">Normal</span>
+        </div>
+        <div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+        <div class="bg-emerald-500 h-full w-[65%]"></div>
+        </div>
+        <div class="flex justify-between items-end">
+        <div>
+        <p class="text-slate-400 text-xs font-bold">Vitamina D</p>
+        <p class="text-lg font-bold text-slate-100">32 <span class="text-xs font-normal">ng/mL</span></p>
+        </div>
+        <span class="px-2 py-1 rounded bg-amber-500/20 text-amber-400 text-[10px] font-bold uppercase tracking-wider">Atenção</span>
+        </div>
+        <div class="w-full bg-slate-700 h-1.5 rounded-full overflow-hidden">
+        <div class="bg-amber-500 h-full w-[40%]"></div>
+        </div>
+        
+        <div class="absolute inset-0 flex items-center justify-center opacity-0 group-hover/card:opacity-100 transition-opacity bg-black/40 rounded-xl backdrop-blur-sm">
+            <span class="bg-primary text-white px-4 py-2 rounded-full text-[10px] font-bold uppercase flex items-center gap-1 shadow-lg">
+                Abrir Detalhes <span class="material-symbols-outlined text-[14px]">open_in_new</span>
+            </span>
+        </div>
+    </div>
+</a>
 </section>
 </div>
 <div class="lg:col-span-6 flex flex-col items-center justify-center relative min-h-[500px]">
@@ -253,57 +262,46 @@
 <div class="fixed top-0 right-0 h-full w-80 bg-slate-900/95 backdrop-blur-xl border-l border-slate-700 z-[100] transform translate-x-full transition-transform duration-300 ease-in-out shadow-2xl" id="customization-panel"><div class="p-6 h-full flex flex-col"><div class="flex justify-between items-center mb-8"><h3 class="text-xl font-bold text-white">Personalizar Avatar</h3><button class="text-slate-400 hover:text-white" id="close-customization"><span class="material-symbols-outlined">close</span></button></div><div class="space-y-6 flex-1 overflow-y-auto pr-2"><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Cabelo</p><div class="grid grid-cols-3 gap-2"><div class="aspect-square bg-slate-800 rounded-lg border-2 border-primary cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">face</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Curto Moderno</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">face_5</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Longo Ondulado</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">face_6</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Militar</span></div></div></div><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Roupas</p><div class="grid grid-cols-3 gap-2"><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">medical_services</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Scrub Azul</span></div><div class="aspect-square bg-slate-800 rounded-lg border-2 border-primary cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">apparel</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Moletom Casual</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">checkroom</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Camisa Social</span></div></div></div><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Cores da Roupa</p><div class="flex flex-wrap gap-3"><div class="size-8 rounded-full bg-blue-500 border-2 border-primary cursor-pointer ring-offset-2 ring-offset-slate-900 ring-2 ring-primary transition-all hover:scale-110 shadow-lg shadow-blue-500/20" title="Azul"></div><div class="size-8 rounded-full bg-red-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-red-500/20" title="Vermelho"></div><div class="size-8 rounded-full bg-emerald-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-emerald-500/20" title="Verde"></div><div class="size-8 rounded-full bg-amber-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-amber-500/20" title="Amarelo"></div><div class="size-8 rounded-full bg-purple-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-purple-500/20" title="Roxo"></div><div class="size-8 rounded-full bg-orange-500 border-2 border-slate-700 cursor-pointer transition-all hover:scale-110 hover:border-slate-400 shadow-lg shadow-orange-500/20" title="Laranja"></div></div></div><div><p class="text-sm font-bold text-slate-400 uppercase mb-3">Acessórios</p><div class="grid grid-cols-3 gap-2"><div class="aspect-square bg-slate-800 rounded-lg border-2 border-primary cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">eyeglasses</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Óculos</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">stethoscope</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Estetoscópio</span></div><div class="aspect-square bg-slate-800 rounded-lg border border-slate-700 cursor-pointer flex flex-col items-center justify-center p-2 text-center transition-all hover:bg-slate-700"><span class="material-symbols-outlined text-slate-300">watch</span><span class="text-[10px] text-slate-400 mt-1 font-medium">Relógio Digital</span></div></div></div></div><button id="save-customization" class="mt-6 w-full bg-primary hover:bg-primary/80 text-white font-bold py-3 rounded-xl transition-all">Salvar Alterações e Cores</button></div></div>
 
 <script>
-    // Seletores Principais
     const openBtn = document.getElementById('open-customization'); 
     const closeBtn = document.getElementById('close-customization'); 
     const panel = document.getElementById('customization-panel');
     const avatar = document.getElementById('main-avatar');
     const saveBtn = document.getElementById('save-customization');
 
-    // Funções de Abrir/Fechar Painel
-    openBtn.addEventListener('click', () => panel.classList.remove('translate-x-full')); 
-    closeBtn.addEventListener('click', () => panel.classList.add('translate-x-full'));
+    if(openBtn) openBtn.addEventListener('click', () => panel.classList.remove('translate-x-full')); 
+    if(closeBtn) closeBtn.addEventListener('click', () => panel.classList.add('translate-x-full'));
 
-    // Lógica para mudar a cor do avatar via filtros CSS (Hue-Rotate)
     document.querySelectorAll('[title]').forEach(colorBtn => {
         colorBtn.addEventListener('click', () => {
             const color = colorBtn.getAttribute('title');
-            
-            // Remove destaque de todos e adiciona no clicado
             document.querySelectorAll('[title]').forEach(b => b.classList.replace('ring-primary', 'border-slate-700'));
             colorBtn.classList.add('ring-2', 'ring-primary');
-
-            // Aplica o filtro de cor na imagem
-            if(color === 'Azul') avatar.style.filter = "hue-rotate(0deg)";
-            if(color === 'Vermelho') avatar.style.filter = "hue-rotate(140deg)";
-            if(color === 'Verde') avatar.style.filter = "hue-rotate(80deg)";
-            if(color === 'Amarelo') avatar.style.filter = "hue-rotate(40deg)";
-            if(color === 'Roxo') avatar.style.filter = "hue-rotate(240deg)";
-            if(color === 'Laranja') avatar.style.filter = "hue-rotate(15deg)";
+            if(avatar) {
+                if(color === 'Azul') avatar.style.filter = "hue-rotate(0deg)";
+                if(color === 'Vermelho') avatar.style.filter = "hue-rotate(140deg)";
+                if(color === 'Verde') avatar.style.filter = "hue-rotate(80deg)";
+                if(color === 'Amarelo') avatar.style.filter = "hue-rotate(40deg)";
+                if(color === 'Roxo') avatar.style.filter = "hue-rotate(240deg)";
+                if(color === 'Laranja') avatar.style.filter = "hue-rotate(15deg)";
+            }
         });
     });
 
-    // Lógica para troca de Estilos (Cabelo/Roupas/Acessórios)
-    // Como não temos as URLs das imagens separadas, adicionei um efeito visual de troca
     document.querySelectorAll('.aspect-square').forEach(styleBtn => {
         styleBtn.addEventListener('click', () => {
-            // Remove borda azul de todos do mesmo grupo e coloca no selecionado
             const parent = styleBtn.parentElement;
             parent.querySelectorAll('.aspect-square').forEach(b => b.classList.replace('border-primary', 'border-slate-700'));
             styleBtn.classList.add('border-2', 'border-primary');
-
-            // Feedback visual no avatar (piscar) para indicar a troca
-            avatar.style.opacity = "0.5";
-            setTimeout(() => {
-                avatar.style.opacity = "1";
-            }, 150);
+            if(avatar) {
+                avatar.style.opacity = "0.5";
+                setTimeout(() => { avatar.style.opacity = "1"; }, 150);
+            }
         });
     });
 
-    // Botão Salvar
-    saveBtn.addEventListener('click', () => {
+    if(saveBtn) saveBtn.addEventListener('click', () => {
         panel.classList.add('translate-x-full');
-        alert("Avatar personalizado com sucesso!");
+        alert("Alterações salvas com sucesso!");
     });
 </script>
 </body></html>

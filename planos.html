@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html class="dark" lang="pt-br">
+<head>
+    <meta charset="utf-8"/>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#1152d4",
+                        "background-light": "#f6f6f8",
+                        "background-dark": "#101622",
+                    },
+                    fontFamily: { "display": ["Inter"] },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .glass-card {
+            background: rgba(17, 82, 212, 0.05);
+            backdrop-filter: blur(8px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        .plan-premium {
+            border: 2px solid #1152d4;
+            box-shadow: 0 0 20px rgba(17, 82, 212, 0.2);
+        }
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined' !important;
+        }
+    </style>
+</head>
+<body class="bg-background-dark text-slate-100 min-h-screen relative">
+
+<div id="modal-sucesso" class="fixed inset-0 bg-[#101622]/90 backdrop-blur-md z-[100] hidden items-center justify-center opacity-0 transition-opacity duration-300 px-4">
+    <div class="glass-card p-10 rounded-[30px] max-w-sm w-full text-center border border-emerald-500/30 transform scale-95 transition-transform duration-300 shadow-2xl shadow-emerald-500/10" id="modal-card">
+        
+        <div class="size-20 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-6 relative">
+            <span class="material-symbols-outlined text-emerald-500 text-5xl animate-bounce">check_circle</span>
+            <div class="absolute inset-0 border-4 border-emerald-500/30 rounded-full animate-ping"></div>
+        </div>
+
+        <h3 class="text-2xl font-black text-white mb-2">Plano Atualizado!</h3>
+        <p class="text-slate-400 text-sm mb-8 leading-relaxed">
+            Parabéns! Você agora faz parte do plano <strong class="text-emerald-400 text-base uppercase tracking-widest" id="nome-plano-modal">PRO</strong>.<br>Todos os benefícios já estão ativos no seu Gêmeo Digital.
+        </p>
+
+        <a href="index.html" class="flex items-center justify-center gap-2 w-full py-4 bg-primary hover:bg-primary/80 text-white font-bold rounded-xl transition-all shadow-lg shadow-primary/30 mb-4">
+            <span class="material-symbols-outlined">dashboard</span> Ir para o Dashboard
+        </a>
+        
+        <button onclick="fecharModal()" class="text-slate-500 text-xs font-bold hover:text-slate-300 uppercase tracking-widest transition-colors cursor-pointer">
+            Fechar
+        </button>
+    </div>
+</div>
+<div class="relative flex min-h-screen w-full flex-col overflow-x-hidden">
+    
+    <header class="flex items-center justify-between border-b border-primary/20 px-6 py-4 bg-background-dark/50 sticky top-0 z-50 backdrop-blur-md">
+        <div class="flex items-center gap-4 text-primary">
+            <div class="size-8">
+                <svg fill="none" viewbox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+                    <path clip-rule="evenodd" d="M47.2426 24L24 47.2426L0.757355 24L24 0.757355L47.2426 24ZM12.2426 21H35.7574L24 9.24264L12.2426 21Z" fill="currentColor" fill-rule="evenodd"></path>
+                </svg>
+            </div>
+            <h2 class="text-slate-100 text-xl font-bold tracking-tight">CarePlus <span class="text-primary/80 font-normal">Health</span></h2>
+        </div>
+        <div class="flex items-center gap-4">
+            <a href="index.html" class="text-slate-400 hover:text-slate-100 transition-colors flex items-center gap-2 font-medium">
+                <span class="material-symbols-outlined">arrow_back</span> Voltar
+            </a>
+        </div>
+    </header>
+
+    <main class="flex-1 p-6 max-w-7xl mx-auto w-full flex flex-col items-center justify-center">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-black text-white mb-4">Escolha o seu Plano</h1>
+            <p class="text-slate-400 text-lg">Potencialize seu monitoramento de saúde com inteligência artificial.</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 w-full">
+            
+            <div class="glass-card p-8 rounded-3xl flex flex-col hover:scale-[1.02] transition-transform">
+                <div class="mb-6">
+                    <span class="text-emerald-400 bg-emerald-400/10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Iniciante</span>
+                    <h3 class="text-2xl font-bold mt-4">Básico</h3>
+                    <p class="text-slate-400 text-sm mt-2">Essencial para monitoramento diário.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-black text-white">R$ 0</span>
+                    <span class="text-slate-500 text-sm">/mês</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-300">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Dashboard Vital</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Lembrete de Medicamentos</li>
+                    <li class="flex items-center gap-3 text-slate-600"><span class="material-symbols-outlined text-sm">cancel</span> IA Health Score Avançado</li>
+                </ul>
+                <button class="w-full py-3 rounded-xl border border-primary text-primary font-bold opacity-50 cursor-not-allowed">Plano Atual</button>
+            </div>
+
+            <div class="glass-card plan-premium p-8 rounded-3xl flex flex-col relative scale-105 hover:scale-[1.07] transition-transform">
+                <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-white text-[10px] font-black px-4 py-1 rounded-full uppercase tracking-tighter">Mais Popular</div>
+                <div class="mb-6">
+                    <span class="text-primary bg-primary/10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Performance</span>
+                    <h3 class="text-2xl font-bold mt-4">Pro</h3>
+                    <p class="text-slate-400 text-sm mt-2">Acesso completo ao Health Score.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-black text-white">R$ 49</span>
+                    <span class="text-slate-500 text-sm">/mês</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-300">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Tudo do Básico</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> IA Health Score Completo</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Relatórios em PDF semanais</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Suporte Prioritário</li>
+                </ul>
+                <button onclick="assinarPlano('PRO', this)" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl bg-primary text-white font-bold hover:bg-primary/80 transition-all shadow-lg shadow-primary/30">
+                    Assinar Pro
+                </button>
+            </div>
+
+            <div class="glass-card p-8 rounded-3xl flex flex-col hover:scale-[1.02] transition-transform">
+                <div class="mb-6">
+                    <span class="text-purple-400 bg-purple-400/10 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-widest">Exclusivo</span>
+                    <h3 class="text-2xl font-bold mt-4">Elite</h3>
+                    <p class="text-slate-400 text-sm mt-2">Telemedicina ilimitada e análises.</p>
+                </div>
+                <div class="mb-8">
+                    <span class="text-4xl font-black text-white">R$ 99</span>
+                    <span class="text-slate-500 text-sm">/mês</span>
+                </div>
+                <ul class="space-y-4 mb-8 flex-1 text-sm text-slate-300">
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Tudo do Pro</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> 2 Consultas via Telemedicina</li>
+                    <li class="flex items-center gap-3"><span class="material-symbols-outlined text-primary text-sm">check_circle</span> Histórico Vital Ilimitado</li>
+                </ul>
+                <button onclick="assinarPlano('ELITE', this)" class="flex items-center justify-center gap-2 w-full py-3 rounded-xl border border-slate-700 text-white font-bold hover:bg-slate-800 transition-colors">
+                    Assinar Elite
+                </button>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="p-6 text-center text-slate-500 text-xs border-t border-slate-800 mt-12">
+        &copy; 2026 CarePlus Health. Todos os direitos reservados.
+    </footer>
+</div>
+
+<script>
+    function assinarPlano(nomePlano, btnElement) {
+        // Guarda o texto original do botão
+        const textoOriginal = btnElement.innerText;
+        
+        // Efeito de "Carregando"
+        btnElement.innerHTML = '<span class="material-symbols-outlined animate-spin">sync</span> Processando...';
+        btnElement.disabled = true;
+        btnElement.classList.add('opacity-80', 'cursor-wait');
+
+        // Simula o tempo de compra no banco de dados (1.5 segundos)
+        setTimeout(() => {
+            // Volta o botão ao normal
+            btnElement.innerHTML = textoOriginal;
+            btnElement.disabled = false;
+            btnElement.classList.remove('opacity-80', 'cursor-wait');
+
+            // Prepara e abre o modal de sucesso
+            const modal = document.getElementById('modal-sucesso');
+            const card = document.getElementById('modal-card');
+            
+            // Muda o nome do plano de forma dinâmica (PRO ou ELITE)
+            document.getElementById('nome-plano-modal').innerText = nomePlano;
+
+            // Remove o "hidden" para aparecer na tela
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            
+            // Um pequeno atraso para a animação CSS (fade in) funcionar bonito
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                card.classList.remove('scale-95');
+                card.classList.add('scale-100');
+            }, 10);
+
+        }, 1500);
+    }
+
+    function fecharModal() {
+        const modal = document.getElementById('modal-sucesso');
+        const card = document.getElementById('modal-card');
+        
+        // Faz a animação de fechar (fade out)
+        modal.classList.add('opacity-0');
+        card.classList.remove('scale-100');
+        card.classList.add('scale-95');
+        
+        // Esconde a div depois da animação
+        setTimeout(() => {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 300);
+    }
+</script>
+</body>
+</html>
