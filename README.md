@@ -6,28 +6,28 @@
 
 ## 📝 Visão Geral
 
-[cite_start]O **CarePlus Health** é uma plataforma de vanguarda que utiliza o conceito de **Gêmeo Digital** para transitar da medicina reativa para a medicina preditiva[cite: 19, 20]. [cite_start]Nossa solução cria uma réplica exata do paciente, permitindo antecipar condições clínicas e personalizar tratamentos através de simulações digitais avançadas[cite: 22, 23].
+O **CarePlus Health** é uma plataforma de vanguarda que utiliza o conceito de **Gêmeo Digital** para transitar da medicina reativa para a medicina preditiva. Nossa solução cria uma réplica exata do paciente, permitindo antecipar condições clínicas e personalizar tratamentos através de simulações digitais avançadas.
 
 ---
 
 ## 🏗️ Arquitetura do Sistema
 
-[cite_start]O ecossistema é fundamentado em três fases de processamento integradas[cite: 26]:
+O ecossistema é fundamentado em três fases de processamento integradas:
 
 ### 1. O Corpo Virtual (Captação Multidispositivo)
-[cite_start]Diferente de sistemas fechados, nossa arquitetura é projetada para a **super-convergência de dados**[cite: 33]. Integramos fluxos de:
+Diferente de sistemas fechados, nossa arquitetura é projetada para a **super-convergência de dados**. Integramos fluxos de:
 * **Wearables de Alta Fidelidade:** Suporte nativo para coleta de biomarcadores via **Apple Watch (HealthKit)**, **Samsung Galaxy Watch** e ecossistema **Xiaomi**, permitindo monitoramento clínico contínuo e transparente para o usuário.
-* [cite_start]**Dispositivos IoT Customizados:** Integração via **ESP32** para monitoramento de sinais vitais específicos em cenários de baixo custo e alta escalabilidade[cite: 36, 59].
-* [cite_start]**Dados Estáticos e Contextuais:** Cruzamento de informações genômicas com o histórico clínico completo do paciente[cite: 35, 37].
+* **Dispositivos IoT Customizados:** Integração via **ESP32** para monitoramento de sinais vitais específicos em cenários de baixo custo e alta escalabilidade.
+* **Dados Estáticos e Contextuais:** Cruzamento de informações genômicas com o histórico clínico completo do paciente.
 
 ### 2. O Cérebro Virtual (Motor de Simulação)
-[cite_start]Nesta fase, o sistema deixa de ser um simples monitor para se tornar um simulador preditivo[cite: 41]:
-* [cite_start]**Simulação "What-If":** Médicos podem testar intervenções digitalmente no Gêmeo Digital antes da aplicação física[cite: 43].
-* [cite_start]**Predição de Efeitos Colaterais:** Algoritmos de Machine Learning analisam como um novo medicamento pode impactar variáveis como a frequência cardíaca ou pressão arterial com base nos dados reais do paciente[cite: 46, 47].
+Nesta fase, o sistema deixa de ser um simples monitor para se tornar um simulador preditivo:
+* **Simulação "What-If":** Médicos podem testar intervenções digitalmente no Gêmeo Digital antes da aplicação física.
+* **Predição de Efeitos Colaterais:** Algoritmos de Machine Learning analisam como um novo medicamento pode impactar variáveis como a frequência cardíaca ou pressão arterial com base nos dados reais do paciente.
 
 ### 3. A Entrega (Interface e Prescrição Inteligente)
-* [cite_start]**Dashboard Evolutivo:** Visualização clara da saúde atual e tendências futuras através do "avatar" do paciente[cite: 51].
-* [cite_start]**Prescrição Integrada:** Geração de receitas digitais validadas pela simulação, garantindo segurança total no tratamento[cite: 52].
+* **Dashboard Evolutivo:** Visualização clara da saúde atual e tendências futuras através do "avatar" do paciente.
+* **Prescrição Integrada:** Geração de receitas digitais validadas pela simulação, garantindo segurança total no tratamento.
 
 ---
 
