@@ -1,0 +1,63 @@
+========================================================================
+                 PROPRIETARY AND CONFIDENTIAL SOFTWARE LICENSE
+                 LICENÇA DE SOFTWARE PROPRIETÁRIO E CONFIDENCIAL
+========================================================================
+
+Copyright (c) 2026 Equipe de Desenvolvimento.
+Todos os direitos reservados / All rights reserved.
+
+AUTORES E DESENVOLVEDORES (Equipe):
+- Isabela Marques de Oliveira
+- Samy Tamires de Sousa Cruz
+- Isabelle Ramos De Filippis
+- João Vitor Anunciação Oliveira
+- Paulo Ribeiro Marinho
+
+[PORTUGUÊS]
+1. PROPRIEDADE INTELECTUAL E AUTORIA
+Este código-fonte, interface, arquitetura e documentação associada foram 
+desenvolvidos exclusivamente pela equipe listada acima. Este projeto foi 
+criado no contexto de uma solução acadêmica desenvolvida para a Care Plus, 
+no âmbito das atividades de avaliação e projetos da instituição de ensino.
+
+2. RESTRIÇÕES DE USO
+Este é um software de código fechado (Closed Source). É expressamente 
+proibido a terceiros:
+a) Copiar, clonar, distribuir ou reproduzir qualquer parte deste repositório;
+b) Modificar, adaptar ou criar trabalhos derivados;
+c) Realizar engenharia reversa ou descompilação;
+d) Utilizar este código para fins comerciais, acadêmicos, hackathons ou 
+portfólios de pessoas que não pertençam à equipe autoral original.
+
+3. USO DE MARCA
+O nome "Care Plus" e seus respectivos logotipos são marcas registradas de 
+sua empresa detentora. O uso neste projeto possui caráter estritamente 
+ilustrativo e acadêmico, não configurando apropriação ou afiliação oficial 
+sem o devido contrato formal. A violação destes termos sujeita o infrator 
+às sanções legais vigentes de proteção à propriedade intelectual e direitos 
+autorais.
+
+------------------------------------------------------------------------
+
+[ENGLISH]
+1. INTELLECTUAL PROPERTY AND AUTHORSHIP
+This source code, interface, architecture, and associated documentation were 
+developed exclusively by the team listed above. This project was created as 
+an academic solution developed for Care Plus, within the scope of evaluation 
+activities and projects at the educational institution.
+
+2. USAGE RESTRICTIONS
+This is Closed Source software. Third parties are expressly prohibited from:
+a) Copying, cloning, distributing, or reproducing any part of this repository;
+b) Modifying, adapting, or creating derivative works;
+c) Performing reverse engineering or decompilation;
+d) Using this code for commercial or academic purposes, hackathons, or 
+portfolios of individuals who do not belong to the original authoring team.
+
+3. TRADEMARK USE
+The name "Care Plus" and its respective logos are trademarks of their 
+holding company. The use in this project is strictly for illustrative and 
+academic purposes, and does not constitute official appropriation or 
+affiliation without a formal contract. Violation of these terms subjects 
+the offender to current legal sanctions regarding intellectual property 
+and copyright protection.
